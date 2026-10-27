@@ -39,6 +39,18 @@ export const socials = [
   { label: 'Email', href: 'mailto:andidprastyo@gmail.com', icon: 'mail' },
 ]
 
+/* ---- Hero ticker --------------------------------------------------------
+   Decorative strip under the hero. `tone` picks the marker colour:
+   blue | cyan | green | violet. Keep each label short.
+   ------------------------------------------------------------------------ */
+export const focusAreas = [
+  { label: 'AI Engineering', tone: 'blue' },
+  { label: 'Geospatial Intelligence', tone: 'cyan' },
+  { label: 'Data Platforms', tone: 'green' },
+  { label: 'IoT & Edge AI', tone: 'violet' },
+  { label: 'Solution Architecture', tone: 'blue' },
+]
+
 /* ---- Experience ---------------------------------------------------------
    Newest first. `highlights` is optional.
    ------------------------------------------------------------------------ */
@@ -126,6 +138,9 @@ export const experience = [
 export const projects = [
   {
     title: 'OLIST Store ETL Pipeline',
+    image: '/projects/olist.png',
+    imageAlt:
+      'OLIST ELT pipeline diagram: Kaggle CSVs ingested with Python, uploaded to S3, transformed with dbt and DuckDB, and served to Postgres and Metabase.',
     status: 'wip',
     featured: true,
     year: '2024',
@@ -136,6 +151,9 @@ export const projects = [
   },
   {
     title: 'GeoTSAT',
+    image: '/projects/geotsat.jpeg',
+    imageAlt:
+      'GeoTSAT landing page with satellite imagery of terraced rice fields and the headline Secure Earth Intelligence for Indonesia.',
     status: 'active',
     year: '2025',
     description:
@@ -145,6 +163,9 @@ export const projects = [
   },
   {
     title: 'TSATSense',
+    image: '/projects/tsatsense.jpeg',
+    imageAlt:
+      'TSATSense IoT landing page with connected asset icons orbiting a satellite hub.',
     status: 'active',
     year: '2026',
     description:
@@ -154,6 +175,9 @@ export const projects = [
   },
   {
     title: 'High Carbon Stock Analysis',
+    image: '/projects/carbon.jpeg',
+    imageAlt:
+      'Carbon monitoring report cover with satellite imagery of forested hills in Bogor Regency.',
     status: 'done',
     year: '2025',
     description:
@@ -163,6 +187,9 @@ export const projects = [
   },
   {
     title: 'Legalytics',
+    image: '/projects/jdih.jpeg',
+    imageAlt:
+      'JDIH Kemenkeu legal document portal with search, regulation listings, and legal analytics figures.',
     status: 'active',
     year: '2024',
     description:
@@ -177,8 +204,8 @@ export const projects = [
    ------------------------------------------------------------------------ */
 export const navItems = [
   { id: 'about', label: 'About' },
-  { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
+  { id: 'experience', label: 'Experience' },
   { id: 'contact', label: 'Contact' },
 ]
 

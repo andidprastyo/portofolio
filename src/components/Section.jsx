@@ -20,12 +20,17 @@ export default function Section({
   description,
   actions,
   variant,
+  tone = 'blue',
   children,
 }) {
   const ref = useReveal()
 
   return (
-    <section id={id} className={`section ${variant ? `section--${variant}` : ''}`}>
+    <section
+      id={id}
+      data-tone={tone}
+      className={`section ${variant ? `section--${variant}` : ''}`}
+    >
       <div className="container">
         <header className="section__header">
           <span className="section__index mono">{String(index).padStart(2, '0')}</span>

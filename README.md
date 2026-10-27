@@ -38,7 +38,8 @@ component changes required. Sections render conditionally, so deleting an array
 | `profile`    | Name, role, tagline, bio, location, availability, avatar, résumé link |
 | `stats`      | The four-up metrics strip under the hero                              |
 | `socials`    | Contact links in the hero and Contact section                         |
-| `experience` | The timeline entries                                                  |
+| `focusAreas` | Decorative ticker labels under the hero                               |
+| `experience` | The role explorer entries                                             |
 | `projects`   | The project cards                                                     |
 | `skills`     | The grouped skill columns                                             |
 | `navItems`   | Navbar and footer links (`id` must match section ids)                 |
@@ -50,6 +51,8 @@ component changes required. Sections render conditionally, so deleting an array
   The hero swaps its secondary button to a download link automatically.
 - **Project badges** — set `status` to `shipped`, `active`, `wip`, or `archived`.
   Set `featured: true` to make a card span the full grid width.
+- **Project images** — drop a screenshot into `public/projects/`, then set
+  `image: '/projects/name.jpg'` and an optional `imageAlt` description.
 
 ## Design system
 
@@ -84,8 +87,8 @@ and text tokens:
 
 ```
 src/
-  components/     Navbar, Hero, About, Experience, Projects, Contact,
-                  Footer, Section (shared header), Icon (inline SVG set)
+  components/     Navbar, Backdrop, Hero, Marquee, About, Projects, Experience,
+                  Contact, Footer, Section (shared header), Icon (inline SVG set)
   data/
     portfolio.js  ← all site content
   hooks/

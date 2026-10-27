@@ -80,3 +80,37 @@ export function useScrolled(offset = 12) {
 
   return scrolled
 }
+
+/**
+ * Page scroll progress from 0 to 1, throttled to one update per frame.
+ * Drives the gradient hairline under the sticky navbar.
+ */
+export function useScrollProgress() {
+  const [progress, setProgress] = useState(0)
+
+  useEffect(() => {
+    let frame = 0
+
+    const measure = () => {
+      frame = 0
+      const max = document.documentElement.scrollHeight - window.innerHeight
+      setProgress(max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0)
+    }
+
+    const schedule = () => {
+      if (!frame) frame = requestAnimationFrame(measure)
+    }
+
+    measure()
+    window.addEventListener('scroll', schedule, { passive: true })
+    window.addEventListener('resize', schedule)
+
+    return () => {
+      window.removeEventListener('scroll', schedule)
+      window.removeEventListener('resize', schedule)
+      if (frame) cancelAnimationFrame(frame)
+    }
+  }, [])
+
+  return progress
+}

@@ -10,6 +10,7 @@ export default function Contact() {
       index={4}
       title="Contact"
       description="Have a role, a project, or a question? I read everything."
+      tone="green"
     >
       <div className="contact">
         <div className="contact__panel">

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { navItems, profile } from '../data/portfolio'
-import { useScrolled, useScrollSpy } from '../hooks/usePortfolio'
+import { useScrolled, useScrollProgress, useScrollSpy } from '../hooks/usePortfolio'
 
 const SECTION_IDS = navItems.map((item) => item.id)
 
@@ -8,6 +8,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const scrolled = useScrolled(8)
   const activeId = useScrollSpy(SECTION_IDS)
+  const progress = useScrollProgress()
 
   // Lock body scroll while the mobile drawer is open.
   useEffect(() => {
@@ -73,6 +74,12 @@ export default function Navbar() {
           </button>
         </div>
       </div>
+
+      <span
+        className="nav__progress"
+        style={{ transform: `scaleX(${progress})` }}
+        aria-hidden="true"
+      />
 
       {/* Mobile drawer */}
       <div

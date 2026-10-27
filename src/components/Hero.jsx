@@ -6,6 +6,13 @@ export default function Hero() {
   return (
     <section id="top" className="hero">
       <div className="container hero__inner">
+        <div className="hero__frame" aria-hidden="true">
+          <span />
+          <span />
+          <span />
+          <span />
+        </div>
+
         <div className="hero__main">
           <p className="hero__status">
             <span className="hero__dot" aria-hidden="true" />
