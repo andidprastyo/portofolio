@@ -1,0 +1,192 @@
+/* ============================================================================
+   Palantir Blueprint — design tokens
+   ----------------------------------------------------------------------------
+   Raw palette values are taken verbatim from Palantir's open-source
+   Blueprint design system (packages/colors/src/_colors.scss, Apache-2.0).
+   Semantic aliases below mirror Blueprint's *light theme* intent — a soft
+   white canvas with white raised surfaces — so the site reads like an
+   operations console without the usual dark portfolio look.
+   ========================================================================= */
+
+:root {
+  /* ---- Raw palette: gray scale ---------------------------------------- */
+  --bp-black: #111418;
+
+  --bp-dark-gray1: #1c2127;
+  --bp-dark-gray2: #252a31;
+  --bp-dark-gray3: #2f343c;
+  --bp-dark-gray4: #383e47;
+  --bp-dark-gray5: #404854;
+
+  --bp-gray1: #5f6b7c;
+  --bp-gray2: #738091;
+  --bp-gray3: #8f99a8;
+  --bp-gray4: #abb3bf;
+  --bp-gray5: #c5cbd3;
+
+  --bp-light-gray1: #d3d8de;
+  --bp-light-gray2: #dce0e5;
+  --bp-light-gray3: #e5e8eb;
+  --bp-light-gray4: #edeff2;
+  --bp-light-gray5: #f6f7f9;
+
+  --bp-white: #ffffff;
+
+  /* ---- Raw palette: core hues ----------------------------------------- */
+  --bp-blue1: #184a90;
+  --bp-blue2: #215db0;
+  --bp-blue3: #2d72d2;
+  --bp-blue4: #4c90f0;
+  --bp-blue5: #8abbff;
+
+  --bp-green1: #165a36;
+  --bp-green2: #1c6e42;
+  --bp-green3: #238551;
+  --bp-green4: #32a467;
+  --bp-green5: #72ca9b;
+
+  --bp-orange1: #77450d;
+  --bp-orange2: #935610;
+  --bp-orange3: #c87619;
+  --bp-orange4: #ec9a3c;
+  --bp-orange5: #fbb360;
+
+  --bp-red1: #8e292c;
+  --bp-red2: #ac2f33;
+  --bp-red3: #cd4246;
+  --bp-red4: #e76a6e;
+  --bp-red5: #fa999c;
+
+  --bp-cerulean1: #0c5174;
+  --bp-cerulean3: #147eb3;
+  --bp-cerulean5: #68c1ee;
+
+  --bp-turquoise1: #004d46;
+  --bp-turquoise3: #00a396;
+  --bp-turquoise5: #7ae1d8;
+
+  --bp-violet3: #9d3f9d;
+  --bp-indigo3: #7961db;
+  --bp-gold3: #d1980b;
+
+  /* =====================================================================
+     Semantic layer — Blueprint light theme
+     ===================================================================== */
+
+  /* Surfaces: soft white canvas, cards sit one step brighter (pure white). */
+  --surface-app: #f8f9fb;
+  --surface-raised: var(--bp-white);
+  --surface-overlay: var(--bp-white);
+  --surface-sunken: #f1f3f6;
+  --surface-hover: rgba(17, 20, 24, 0.04);
+  --surface-active: rgba(17, 20, 24, 0.08);
+
+  /* Text — each level clears WCAG AA (4.5:1) against the lightest surface
+     it can land on (--surface-raised, #ffffff). */
+  --text-primary: var(--bp-black);
+  --text-secondary: var(--bp-dark-gray4);
+  --text-muted: var(--bp-gray1);
+  --text-disabled: rgba(95, 107, 124, 0.5);
+  --text-inverse: var(--bp-light-gray5);
+
+  /* Borders — Blueprint light theme draws 1px hairlines, never fat strokes. */
+  --border: rgba(17, 20, 24, 0.16);
+  --border-subtle: rgba(17, 20, 24, 0.09);
+  --border-strong: rgba(17, 20, 24, 0.26);
+
+  /* Brand / intent */
+  --accent: var(--bp-blue3);
+  --accent-hover: var(--bp-blue2);
+  --accent-active: var(--bp-blue1);
+  --accent-text: var(--bp-blue2);
+  --accent-surface: rgba(45, 114, 210, 0.09);
+  --accent-border: rgba(45, 114, 210, 0.35);
+
+  /* Secondary accent — cool cyan that pairs with Blueprint blue without
+     shouting. Used sparingly: gradients, glows, and small highlights. */
+  --accent-2: var(--bp-cerulean3);
+  --accent-2-text: var(--bp-cerulean1);
+  --accent-gradient: linear-gradient(
+    135deg,
+    var(--bp-blue2) 0%,
+    var(--bp-blue3) 55%,
+    var(--bp-cerulean3) 100%
+  );
+  --glow-blue: rgba(45, 114, 210, 0.07);
+  --glow-cyan: rgba(104, 193, 238, 0.1);
+
+  --success: var(--bp-green3);
+  --success-text: var(--bp-green2);
+  --success-surface: rgba(35, 133, 81, 0.1);
+
+  --warning: var(--bp-orange3);
+  --warning-text: var(--bp-orange2);
+  --warning-surface: rgba(200, 118, 25, 0.12);
+
+  --danger: var(--bp-red3);
+  --danger-text: var(--bp-red2);
+
+  --focus-ring: 0 0 0 2px var(--surface-app), 0 0 0 4px rgba(45, 114, 210, 0.55);
+
+  /* ---- Typography ------------------------------------------------------ */
+  --font-sans:
+    'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-mono:
+    'SFMono-Regular', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+  --text-xs: 11px;
+  --text-sm: 12px;
+  --text-base: 14px;
+  --text-md: 16px;
+  --text-lg: 20px;
+  --text-xl: 26px;
+  --text-2xl: 34px;
+  --text-3xl: 46px;
+  --text-4xl: 60px;
+
+  /* Blueprint's density is 1.285, but that is tuned for UI chrome rather than
+     long-form prose. Two tokens keep the console feel without hurting body copy. */
+  --leading-tight: 1.15;
+  --leading-ui: 1.285;
+  --leading-snug: 1.35;
+  --leading-base: 1.5;
+  --leading-prose: 1.6;
+
+  --tracking-label: 0.1em;
+  --tracking-tight: -0.02em;
+
+  /* ---- Spacing: Blueprint's 10px grid, half-steps of 5px --------------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 30px;
+  --space-7: 40px;
+  --space-8: 60px;
+  --space-9: 80px;
+  --space-10: 120px;
+
+  /* ---- Shape: Blueprint's signature near-square corners ---------------- */
+  --radius-sm: 2px;
+  --radius: 2px;
+  --radius-lg: 4px;
+  --radius-pill: 999px;
+
+  /* ---- Elevation: flat, border-led, minimal blur ----------------------- */
+  --shadow-1: 0 0 0 1px rgba(17, 20, 24, 0.05), 0 1px 2px rgba(17, 20, 24, 0.07);
+  --shadow-2: 0 0 0 1px rgba(17, 20, 24, 0.06), 0 4px 10px rgba(17, 20, 24, 0.09);
+  --shadow-3: 0 0 0 1px rgba(17, 20, 24, 0.06), 0 10px 28px rgba(17, 20, 24, 0.14);
+
+  /* ---- Motion ---------------------------------------------------------- */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 100ms;
+  --duration: 180ms;
+  --duration-slow: 320ms;
+
+  /* ---- Layout ---------------------------------------------------------- */
+  --container: 1180px;
+  --nav-height: 52px;
+  --z-nav: 100;
+}
