@@ -1,5 +1,5 @@
 import { profile, socials } from '../data/portfolio'
-import { externalLinkProps } from '../lib/links'
+import { externalLinkProps, sanitizeHref } from '../lib/links'
 import { Icon } from './Icon'
 
 export default function Hero() {
@@ -45,7 +45,7 @@ export default function Hero() {
 
             {profile.resumeUrl ? (
               <a
-                href={profile.resumeUrl}
+                href={sanitizeHref(profile.resumeUrl)}
                 className="btn"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -64,7 +64,7 @@ export default function Hero() {
             {socials.map((social) => (
               <li key={social.label}>
                 <a
-                  href={social.href}
+                  href={sanitizeHref(social.href)}
                   className="hero__social"
                   aria-label={social.label}
                   title={social.label}

@@ -1,5 +1,5 @@
 import { projects } from '../data/portfolio'
-import { externalLinkProps, isExternalUrl } from '../lib/links'
+import { externalLinkProps, isExternalUrl, sanitizeHref } from '../lib/links'
 import { statusLabel } from '../lib/status'
 import { Icon } from './Icon'
 import Section from './Section'
@@ -78,7 +78,7 @@ function ProjectCard({ project }) {
               <a
                 className="card__link"
                 key={link.label}
-                href={link.href}
+                href={sanitizeHref(link.href)}
                 {...externalLinkProps(link.href)}
               >
                 <Icon name={linkIcon(link)} size={13} />

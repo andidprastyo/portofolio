@@ -1,5 +1,5 @@
 import { profile, socials } from '../data/portfolio'
-import { externalLinkProps } from '../lib/links'
+import { externalLinkProps, sanitizeHref } from '../lib/links'
 import { Icon } from './Icon'
 import Section from './Section'
 
@@ -23,7 +23,7 @@ export default function Contact() {
               <li key={social.label}>
                 <a
                   className="contact__link"
-                  href={social.href}
+                  href={sanitizeHref(social.href)}
                   {...externalLinkProps(social.href)}
                 >
                   <span className="contact__link-icon">

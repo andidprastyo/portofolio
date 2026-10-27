@@ -6,9 +6,22 @@
  * everywhere and removes the chance of one call site drifting.
  */
 
+/**
+ * Allow only URL schemes used by this site. Invalid values fall back to a
+ * harmless in-page anchor instead of being passed to an anchor element.
+ */
+export function sanitizeHref(href = '') {
+  if (typeof href !== 'string') return '#'
+
+  const value = href.trim()
+  if (/^(https?:\/\/|mailto:|tel:|#|\/)/i.test(value)) return value
+
+  return '#'
+}
+
 /** True for absolute http(s) URLs — the only links that leave the site. */
 export function isExternalUrl(href = '') {
-  return /^https?:\/\//i.test(href)
+  return /^https?:\/\//i.test(sanitizeHref(href))
 }
 
 /**
