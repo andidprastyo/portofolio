@@ -39,9 +39,9 @@
 .btn--primary {
   color: var(--bp-white);
   background: var(--accent-gradient);
-  border-color: rgba(76, 144, 240, 0.6);
+  border-color: rgba(120, 131, 67, 0.6);
   box-shadow:
-    0 1px 8px rgba(45, 114, 210, 0.35),
+    0 1px 8px rgba(120, 131, 67, 0.26),
     var(--shadow-1);
 }
 
@@ -84,7 +84,7 @@
 .badge--shipped {
   color: var(--success-text);
   background: var(--success-surface);
-  border-color: rgba(35, 133, 81, 0.3);
+  border-color: rgba(120, 131, 67, 0.34);
 }
 
 .badge--active {
@@ -116,7 +116,7 @@
 
 .dot--success {
   background: var(--success);
-  box-shadow: 0 0 0 3px rgba(35, 133, 81, 0.2);
+  box-shadow: 0 0 0 3px rgba(120, 131, 67, 0.22);
 }
 
 /* ------------------------------------------------------------------- Tags */
@@ -131,7 +131,7 @@
   font-family: var(--font-mono);
   font-size: var(--text-xs);
   color: var(--text-secondary);
-  background: rgba(17, 20, 24, 0.035);
+  background: rgba(15, 26, 18, 0.035);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
   white-space: nowrap;
@@ -139,37 +139,37 @@
 
 /* ---- Accent tones ------------------------------------------------------
    `data-tone` sets local accent variables for section chrome, the ticker,
-   and the experience explorer. Body links stay brand blue for coherence. */
+   and the experience explorer. All tones stay within the botanical palette. */
 [data-tone='blue'] {
   --tone: var(--accent);
   --tone-text: var(--accent-text);
   --tone-surface: var(--accent-surface);
   --tone-border: var(--accent-border);
-  --tone-glow: var(--glow-blue);
+  --tone-glow: var(--glow-forest);
 }
 
 [data-tone='cyan'] {
-  --tone: var(--accent-2);
-  --tone-text: var(--accent-2-text);
-  --tone-surface: rgba(20, 126, 179, 0.09);
-  --tone-border: rgba(20, 126, 179, 0.32);
-  --tone-glow: rgba(20, 126, 179, 0.08);
+  --tone: #186049;
+  --tone-text: #186049;
+  --tone-surface: rgba(24, 96, 73, 0.1);
+  --tone-border: rgba(24, 96, 73, 0.3);
+  --tone-glow: var(--glow-leaf);
 }
 
 [data-tone='green'] {
-  --tone: var(--success);
-  --tone-text: var(--success-text);
-  --tone-surface: var(--success-surface);
-  --tone-border: rgba(35, 133, 81, 0.3);
-  --tone-glow: var(--glow-green);
+  --tone: #186049;
+  --tone-text: #186049;
+  --tone-surface: rgba(24, 96, 73, 0.1);
+  --tone-border: rgba(24, 96, 73, 0.32);
+  --tone-glow: var(--glow-forest);
 }
 
 [data-tone='violet'] {
-  --tone: var(--bp-violet3);
-  --tone-text: var(--bp-violet3);
-  --tone-surface: rgba(157, 63, 157, 0.09);
-  --tone-border: rgba(157, 63, 157, 0.3);
-  --tone-glow: rgba(157, 63, 157, 0.07);
+  --tone: #186049;
+  --tone-text: #186049;
+  --tone-surface: rgba(24, 96, 73, 0.09);
+  --tone-border: rgba(24, 96, 73, 0.28);
+  --tone-glow: var(--glow-moss);
 }
 
 /* ============================================================== Navbar === */
@@ -177,7 +177,7 @@
   position: sticky;
   top: 0;
   z-index: var(--z-nav);
-  background: rgba(248, 249, 251, 0.82);
+  background: rgba(255, 255, 255, 0.86);
   backdrop-filter: blur(12px) saturate(140%);
   -webkit-backdrop-filter: blur(12px) saturate(140%);
   border-bottom: 1px solid transparent;
@@ -187,7 +187,7 @@
 }
 
 .nav--scrolled {
-  background: rgba(248, 249, 251, 0.94);
+  background: rgba(255, 255, 255, 0.96);
   border-bottom-color: var(--border-subtle);
 }
 
@@ -199,9 +199,9 @@
   height: 2px;
   background: linear-gradient(
     90deg,
-    var(--bp-blue3) 0%,
-    var(--bp-cerulean3) 48%,
-    var(--bp-violet3) 100%
+    #124b39 0%,
+    #186049 48%,
+    #186049 100%
   );
   transform: scaleX(0);
   transform-origin: 0 50%;
@@ -240,13 +240,8 @@
   font-size: var(--text-xs);
   font-weight: 700;
   color: var(--bp-white);
-  background: linear-gradient(
-    135deg,
-    var(--bp-blue2) 0%,
-    var(--bp-cerulean3) 55%,
-    var(--bp-violet3) 100%
-  );
-  border-radius: var(--radius-sm);
+  background: var(--accent-gradient);
+  border-radius: 50%;
   flex: none;
 }
 
@@ -406,44 +401,14 @@
   border-bottom: 1px solid var(--border-subtle);
 }
 
-/* Dot field behind the portrait, fading out under the copy. */
+/* Soft leaf-green speckle behind the portrait, fading under the copy. */
 .hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background-image: radial-gradient(
-    circle,
-    rgba(45, 114, 210, 0.18) 1px,
-    transparent 1.5px
-  );
-  background-size: 22px 22px;
-  opacity: 0.75;
-  mask-image: radial-gradient(ellipse 48% 62% at 78% 46%, #000 0%, transparent 72%);
-  -webkit-mask-image: radial-gradient(
-    ellipse 48% 62% at 78% 46%,
-    #000 0%,
-    transparent 72%
-  );
+  content: none;
 }
 
 /* Faint concentric rings around the portrait — depth without a box. */
 .hero::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: clamp(0px, 6vw, 90px);
-  z-index: -1;
-  width: min(460px, 40vw);
-  aspect-ratio: 1;
-  border: 1px solid rgba(45, 114, 210, 0.09);
-  border-radius: 50%;
-  box-shadow:
-    0 0 0 36px rgba(45, 114, 210, 0.025),
-    0 0 0 72px rgba(157, 63, 157, 0.02);
-  transform: translateY(-50%);
-  pointer-events: none;
+  content: none;
 }
 
 .hero__inner {
@@ -454,11 +419,9 @@
   gap: clamp(var(--space-6), 4vw + 12px, var(--space-8));
 }
 
-/* Blueprint crop marks — quiet geometry, half blue and half cyan. */
+/* Quiet botanical-green corner marks frame the portrait. */
 .hero__frame {
-  position: absolute;
-  inset: -10px;
-  pointer-events: none;
+  display: none;
 }
 
 .hero__frame span {
@@ -481,7 +444,7 @@
   right: 0;
   border-top-width: 1px;
   border-right-width: 1px;
-  border-color: rgba(20, 126, 179, 0.32);
+  border-color: rgba(24, 96, 73, 0.32);
 }
 
 .hero__frame span:nth-child(3) {
@@ -489,7 +452,7 @@
   left: 0;
   border-bottom-width: 1px;
   border-left-width: 1px;
-  border-color: rgba(20, 126, 179, 0.32);
+  border-color: rgba(24, 96, 73, 0.32);
 }
 
 .hero__frame span:nth-child(4) {
@@ -514,9 +477,9 @@
   font-size: var(--text-xs);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--success-text);
-  background: var(--success-surface);
-  border: 1px solid rgba(35, 133, 81, 0.3);
+  color: #186049;
+  background: rgba(155, 211, 175, 0.2);
+  border: 1px solid rgba(24, 96, 73, 0.24);
   border-radius: var(--radius-pill);
 }
 
@@ -524,7 +487,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--success);
+  background: #72ca91;
   flex: none;
   animation: pulse 2.4s var(--ease) infinite;
 }
@@ -533,11 +496,11 @@
   0%,
   100% {
     opacity: 1;
-    box-shadow: 0 0 0 0 rgba(35, 133, 81, 0.5);
+    box-shadow: 0 0 0 0 rgba(114, 202, 145, 0.55);
   }
   50% {
     opacity: 0.65;
-    box-shadow: 0 0 0 4px rgba(35, 133, 81, 0);
+    box-shadow: 0 0 0 4px rgba(114, 202, 145, 0);
   }
 }
 
@@ -639,17 +602,9 @@
   isolation: isolate;
 }
 
-/* Cool colour wash bleeding out from behind the portrait. */
+/* Forest and leaf wash bleeding out from behind the portrait. */
 .hero__avatar-wrap::before {
-  content: '';
-  position: absolute;
-  inset: -18px;
-  z-index: -1;
-  background:
-    radial-gradient(circle at 30% 30%, var(--glow-cyan), transparent 62%),
-    radial-gradient(circle at 72% 72%, var(--glow-violet), transparent 62%);
-  border-radius: 28px;
-  filter: blur(8px);
+  content: none;
 }
 
 .hero__avatar {
@@ -657,20 +612,20 @@
   height: auto;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  /* Gradient ring via a transparent border + border-box background. */
+  /* Soft botanical ring via a transparent border + border-box background. */
   border: 3px solid transparent;
-  border-radius: calc(var(--radius-lg) + 2px);
+  border-radius: 28px;
   background:
     linear-gradient(var(--surface-raised), var(--surface-raised)) padding-box,
     conic-gradient(
         from 160deg,
-        var(--bp-blue3),
-        var(--bp-cerulean3),
-        var(--bp-violet3),
-        var(--bp-blue3)
+        #124b39,
+        #186049,
+        #186049,
+        #124b39
       )
       border-box;
-  box-shadow: 0 24px 44px -22px rgba(17, 20, 24, 0.32);
+  box-shadow: 0 24px 44px -22px rgba(15, 26, 18, 0.28);
 }
 
 @media (max-width: 860px) {
@@ -771,11 +726,7 @@
 .section {
   padding-block: var(--space-9);
   border-bottom: 1px solid var(--border-subtle);
-  /* Each section gets a quiet wash of its own tone, so long stretches of
-     canvas never read as one flat sheet. */
-  background-image:
-    radial-gradient(620px 300px at 6% 0%, var(--tone-glow), transparent 72%),
-    radial-gradient(480px 260px at 100% 100%, var(--tone-glow), transparent 74%);
+  background: transparent;
 }
 
 /* Density variants — five identical sections in a row read as a metronome. */
@@ -789,10 +740,7 @@
 
 /* Full-bleed sunken band: a deliberate visual break mid-page. */
 .section--band {
-  background:
-    radial-gradient(520px 220px at 10% 0%, var(--glow-cyan), transparent 70%),
-    radial-gradient(460px 200px at 95% 12%, var(--glow-violet), transparent 72%),
-    var(--surface-sunken);
+  background: rgba(24, 96, 73, 0.035);
   border-block: 1px solid var(--border-subtle);
 }
 
@@ -821,7 +769,7 @@
 
 .section__title {
   font-size: clamp(22px, 2.4vw, 28px);
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: var(--tracking-tight);
   white-space: nowrap;
   text-wrap: balance;
@@ -869,8 +817,9 @@
 
 .about__aside {
   padding: var(--space-5);
-  background: var(--surface-raised);
-  border: 1px solid var(--border-subtle);
+  background: linear-gradient(145deg, #186049, #205f49);
+  color: #fff9f2;
+  border: 1px solid rgba(35, 91, 54, 0.16);
   border-left: 2px solid var(--tone-border);
   border-radius: var(--radius);
   align-self: start;
@@ -882,8 +831,8 @@
   font-size: var(--text-xs);
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
-  color: var(--text-muted);
-  border-bottom: 1px solid var(--border-subtle);
+  color: rgba(255, 249, 242, 0.82);
+  border-bottom: 1px solid rgba(255, 249, 242, 0.28);
 }
 
 .about__fact + .about__fact {
@@ -894,13 +843,13 @@
   font-size: var(--text-xs);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: rgba(255, 249, 242, 0.82);
 }
 
 .about__fact dd {
   margin-top: 2px;
   font-size: var(--text-base);
-  color: var(--text-primary);
+  color: #fff9f2;
 }
 
 .about__fact-status {
@@ -986,6 +935,19 @@
   background: var(--tone-surface);
 }
 
+/* Role details are presented on a deep green panel; keep every toolkit chip
+   and its label in the same warm-white treatment for clear contrast. */
+.xp__panel,
+.xp__panel :where(*) {
+  color: #fff9f2;
+}
+
+.xp__panel .tag {
+  color: #fff9f2;
+  background: rgba(255, 249, 242, 0.1);
+  border-color: rgba(255, 249, 242, 0.28);
+}
+
 .xp__tab.is-active::before {
   height: calc(100% - var(--space-4));
 }
@@ -1051,9 +1013,10 @@
 .xp__panel {
   padding: clamp(var(--space-5), 3vw, var(--space-7));
   background:
-    radial-gradient(420px 180px at 100% 0%, var(--tone-surface), transparent 70%),
-    var(--surface-raised);
-  border: 1px solid var(--border-subtle);
+    radial-gradient(420px 180px at 100% 0%, rgba(255, 249, 242, 0.12), transparent 70%),
+    linear-gradient(145deg, #186049, #205f49);
+  color: #fff9f2;
+  border: 1px solid rgba(35, 91, 54, 0.16);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-1);
 }
@@ -1090,7 +1053,7 @@
   font-weight: 600;
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
-  color: var(--tone-text);
+  color: #fff9f2;
 }
 
 .xp__role {
@@ -1099,7 +1062,7 @@
   font-weight: 600;
   letter-spacing: var(--tracking-tight);
   line-height: var(--leading-tight);
-  color: var(--text-primary);
+  color: #fff9f2;
   text-wrap: balance;
 }
 
@@ -1114,9 +1077,9 @@
 .xp__period {
   padding: 2px var(--space-2);
   font-size: var(--text-xs);
-  color: var(--text-secondary);
-  background: var(--surface-sunken);
-  border: 1px solid var(--border-subtle);
+  color: #fff9f2;
+  background: rgba(255, 249, 242, 0.1);
+  border: 1px solid rgba(255, 249, 242, 0.28);
   border-radius: var(--radius-pill);
   white-space: nowrap;
 }
@@ -1126,7 +1089,7 @@
   align-items: center;
   gap: 4px;
   font-size: var(--text-sm);
-  color: var(--text-muted);
+  color: rgba(255, 249, 242, 0.84);
 }
 
 .xp__summary {
@@ -1135,8 +1098,8 @@
   padding-left: var(--space-4);
   font-size: var(--text-md);
   line-height: var(--leading-prose);
-  color: var(--text-secondary);
-  border-left: 2px solid var(--tone-border);
+  color: rgba(255, 249, 242, 0.94);
+  border-left: 2px solid rgba(255, 249, 242, 0.45);
   text-wrap: pretty;
 }
 
@@ -1153,14 +1116,14 @@
   font-weight: 600;
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: rgba(255, 249, 242, 0.84);
 }
 
 .xp__label::after {
   content: '';
   flex: 1;
   height: 1px;
-  background: var(--border-subtle);
+  background: rgba(255, 249, 242, 0.32);
 }
 
 /* Impact tiles: scannable cards rather than a bulleted CV list. */
@@ -1177,9 +1140,9 @@
   padding: var(--space-4);
   font-size: var(--text-base);
   line-height: var(--leading-snug);
-  color: var(--text-secondary);
-  background: var(--surface-sunken);
-  border: 1px solid var(--border-subtle);
+  color: #fff9f2;
+  background: rgba(255, 249, 242, 0.1);
+  border: 1px solid rgba(255, 249, 242, 0.22);
   border-radius: var(--radius);
   text-wrap: pretty;
 }
@@ -1188,7 +1151,7 @@
   font-size: var(--text-xs);
   font-weight: 600;
   line-height: 1.4;
-  color: var(--tone-text);
+  color: #fff9f2;
 }
 
 @media (max-width: 900px) {
@@ -1261,11 +1224,10 @@
   flex-direction: column;
   padding: 0;
   overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(17, 20, 24, 0.015), transparent 40%),
-    var(--surface-raised);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius);
+  background: linear-gradient(145deg, #186049 0%, #205f49 100%);
+  color: #fff9f2;
+  border: 1px solid rgba(255, 249, 242, 0.2);
+  border-radius: var(--radius-lg);
   transition:
     border-color var(--duration) var(--ease),
     background var(--duration) var(--ease),
@@ -1273,11 +1235,34 @@
     box-shadow var(--duration) var(--ease);
 }
 
+/* The card's inner content (including badges and tags) stays warm white. */
+.card .card__content {
+  color: #fff9f2;
+}
+
+.card .badge,
+.card .tag {
+  color: #fff9f2;
+  background: rgba(255, 249, 242, 0.1);
+  border-color: rgba(255, 249, 242, 0.28);
+}
+
+.card__title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.card__title-icon {
+  flex: none;
+  color: #fff9f2;
+}
+
 .card:hover {
-  background: var(--surface-overlay);
+  background: linear-gradient(145deg, #205f49 0%, #28715a 100%);
   border-color: var(--tone-border);
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px -18px rgba(17, 20, 24, 0.22);
+  box-shadow: 0 12px 28px -18px rgba(15, 26, 18, 0.2);
 }
 
 .card--featured {
@@ -1287,7 +1272,7 @@
       90deg,
       var(--accent),
       var(--accent-2) 55%,
-      var(--bp-violet3)
+      #186049
     )
     1;
   border-image-slice: 1 0 0 0;
@@ -1303,8 +1288,21 @@
   position: relative;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--surface-sunken), var(--surface-app));
-  border-bottom: 1px solid var(--border-subtle);
+  background: linear-gradient(135deg, #205f49, #28715a);
+  border-bottom: 1px solid rgba(255, 249, 242, 0.18);
+}
+
+/* PNG artwork often has a transparent or white canvas. Give it a framed,
+   inset presentation so it feels intentional rather than edge-to-edge. */
+.card__media:has(img[src$='.png']) {
+  padding: clamp(var(--space-3), 2.2vw, var(--space-5));
+  background: linear-gradient(145deg, #205f49, #28715a);
+}
+
+.card__media:has(img[src$='.png']) img {
+  border: 1px solid rgba(255, 249, 242, 0.24);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 14px rgba(30, 66, 39, 0.12);
 }
 
 .card__media img {
@@ -1342,21 +1340,21 @@
 
 .card__title {
   font-size: var(--text-md);
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: var(--tracking-tight);
-  color: var(--text-primary);
+  color: #fff9f2;
   transition: color var(--duration) var(--ease);
   text-wrap: balance;
 }
 
 .card:hover .card__title {
-  color: var(--accent-text);
+  color: #fff9f2;
 }
 
 .card__year {
   font-size: var(--text-xs);
   line-height: var(--leading-ui);
-  color: var(--text-muted);
+  color: rgba(255, 249, 242, 0.82);
 }
 
 /* Cards stack by default; the featured card splits into two columns so its
@@ -1392,7 +1390,7 @@
 
 .card__description {
   max-width: 76ch;
-  color: var(--text-secondary);
+  color: rgba(255, 249, 242, 0.92);
 }
 
 .card__metrics {
@@ -1400,8 +1398,8 @@
   flex-wrap: wrap;
   gap: var(--space-6);
   padding: var(--space-4) var(--space-5);
-  background: var(--surface-sunken);
-  border: 1px solid var(--border-subtle);
+  background: rgba(255, 249, 242, 0.1);
+  border: 1px solid rgba(255, 249, 242, 0.3);
   border-radius: var(--radius);
 }
 
@@ -1409,14 +1407,14 @@
   font-size: var(--text-xs);
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: rgba(255, 249, 242, 0.82);
 }
 
 .card__metric-value {
   margin-top: 2px;
   font-size: var(--text-lg);
   font-weight: 600;
-  color: var(--accent-text);
+  color: #fff9f2;
 }
 
 .card__links {
@@ -1432,8 +1430,8 @@
   align-items: center;
   gap: 6px;
   font-size: var(--text-base);
-  font-weight: 500;
-  color: var(--accent-text);
+  font-weight: 600;
+  color: #fff9f2;
 }
 
 .card__link-arrow {
@@ -1469,21 +1467,14 @@
   gap: var(--space-8);
 }
 
-.contact__lede {
-  max-width: 60ch;
-  margin-bottom: var(--space-5);
-  font-size: var(--text-md);
-  color: var(--text-secondary);
-}
-
 .contact__list {
-  border: 1px solid var(--border-subtle);
+  border: 1px solid rgba(255, 249, 242, 0.24);
   border-radius: var(--radius);
   overflow: hidden;
 }
 
 .contact__list > li + li {
-  border-top: 1px solid var(--border-subtle);
+  border-top: 1px solid rgba(255, 249, 242, 0.24);
 }
 
 .contact__link {
@@ -1492,14 +1483,14 @@
   align-items: center;
   gap: var(--space-4);
   padding: var(--space-4) var(--space-5);
-  background: var(--surface-raised);
-  color: var(--text-primary);
+  background: linear-gradient(145deg, #186049, #205f49);
+  color: #fff9f2;
   transition: background var(--duration) var(--ease);
 }
 
 .contact__link:hover {
-  background: var(--surface-overlay);
-  color: var(--text-primary);
+  background: #28715a;
+  color: #fff9f2;
   text-decoration: none;
 }
 
@@ -1508,15 +1499,15 @@
   place-items: center;
   width: 32px;
   height: 32px;
-  color: var(--text-muted);
-  background: var(--surface-sunken);
-  border: 1px solid var(--border-subtle);
+  color: #fff9f2;
+  background: rgba(255, 249, 242, 0.1);
+  border: 1px solid rgba(255, 249, 242, 0.24);
   border-radius: var(--radius-sm);
 }
 
 .contact__link:hover .contact__link-icon {
-  color: var(--accent-text);
-  border-color: var(--accent-border);
+  color: #fff9f2;
+  border-color: rgba(255, 249, 242, 0.48);
 }
 
 .contact__link-label {
@@ -1526,20 +1517,21 @@
 
 .contact__link-value {
   font-size: var(--text-sm);
-  color: var(--text-muted);
+  color: rgba(255, 249, 242, 0.84);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .contact__link svg:last-child {
-  color: var(--text-muted);
+  color: rgba(255, 249, 242, 0.8);
 }
 
 .contact__aside {
   padding: var(--space-5);
-  background: var(--surface-raised);
-  border: 1px solid var(--border-subtle);
+  background: linear-gradient(145deg, #186049, #205f49);
+  color: #fff9f2;
+  border: 1px solid rgba(35, 91, 54, 0.16);
   border-left: 2px solid var(--tone-border);
   border-radius: var(--radius);
   align-self: start;
@@ -1551,8 +1543,8 @@
   font-size: var(--text-xs);
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
-  color: var(--text-muted);
-  border-bottom: 1px solid var(--border-subtle);
+  color: rgba(255, 249, 242, 0.82);
+  border-bottom: 1px solid rgba(255, 249, 242, 0.32);
 }
 
 .contact__aside-status {
@@ -1560,13 +1552,13 @@
   align-items: center;
   gap: var(--space-2);
   font-size: var(--text-base);
-  color: var(--success-text);
+  color: #fff9f2;
 }
 
 .contact__aside-note {
   margin-top: var(--space-3);
   font-size: var(--text-sm);
-  color: var(--text-muted);
+  color: rgba(255, 249, 242, 0.86);
 }
 
 @media (max-width: 820px) {
@@ -1605,8 +1597,8 @@
     90deg,
     transparent 0%,
     var(--accent-border) 22%,
-    rgba(20, 126, 179, 0.34) 50%,
-    rgba(157, 63, 157, 0.34) 78%,
+    rgba(24, 96, 73, 0.34) 50%,
+    rgba(24, 96, 73, 0.28) 78%,
     transparent 100%
   );
 }

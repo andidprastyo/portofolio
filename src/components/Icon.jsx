@@ -102,6 +102,24 @@ export function Icon({ name, size = 16, ...rest }) {
         </svg>
       )
 
+    case 'leaf':
+      return (
+        <svg {...props}>
+          <path d="M13.8 2.2C7.4 2.2 3 4.5 3 9a4.2 4.2 0 0 0 4.2 4.2c4.5 0 6.6-4.6 6.6-11Z" />
+          <path d="M2 14c2.4-3 5.1-5.2 9-7" />
+        </svg>
+      )
+
+    case 'sprout':
+      return (
+        <svg {...props}>
+          <path d="M8 14V8" />
+          <path d="M8 9C4.5 9 2.5 7 2.5 3.5 6 3.5 8 5.5 8 9Z" />
+          <path d="M8 7c0-3 1.8-5 5.5-5C13.5 5.5 11.5 7.5 8 7Z" />
+          <path d="M5 14h6" />
+        </svg>
+      )
+
     default:
       return null
   }

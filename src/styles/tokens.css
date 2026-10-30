@@ -1,16 +1,16 @@
 /* ============================================================================
-   Palantir Blueprint — design tokens
+   Forest — nature-inspired design tokens
    ----------------------------------------------------------------------------
-   Raw palette values are taken verbatim from Palantir's open-source
-   Blueprint design system (packages/colors/src/_colors.scss, Apache-2.0).
-   Semantic aliases below mirror Blueprint's *light theme* intent — a soft
-   white canvas with white raised surfaces — so the site reads like an
-   operations console without the usual dark portfolio look.
+   A botanical rethink of the original Blueprint-inspired palette. The raw
+   greens are taken from Blueprint's open-source hue scales (Apache-2.0) and
+   extended with leaf, mint, and moss families. Semantic aliases below keep a
+   *light theme* — a soft sage-washed white canvas with white raised surfaces —
+   so the site reads like a field journal rather than an operations console.
    ========================================================================= */
 
 :root {
   /* ---- Raw palette: gray scale ---------------------------------------- */
-  --bp-black: #111418;
+  --bp-black: #0f1a12;
 
   --bp-dark-gray1: #1c2127;
   --bp-dark-gray2: #252a31;
@@ -32,18 +32,33 @@
 
   --bp-white: #ffffff;
 
-  /* ---- Raw palette: core hues ----------------------------------------- */
-  --bp-blue1: #184a90;
-  --bp-blue2: #215db0;
-  --bp-blue3: #2d72d2;
-  --bp-blue4: #4c90f0;
-  --bp-blue5: #8abbff;
-
-  --bp-green1: #165a36;
+  /* ---- Raw palette: greens ------------------------------------------- */
+  --bp-green1: #155a35;
   --bp-green2: #1c6e42;
   --bp-green3: #238551;
-  --bp-green4: #32a467;
+  --bp-green4: #33a467;
   --bp-green5: #72ca9b;
+
+  /* Fresh leaf — a lively yellow-green for secondary accents. */
+  --bp-leaf1: #4a6100;
+  --bp-leaf2: #5e7705;
+  --bp-leaf3: #7a9612;
+  --bp-leaf4: #98b432;
+  --bp-leaf5: #c9d97c;
+
+  /* Mint — cool teal-green, the "water and undergrowth" hue. */
+  --bp-mint1: #0c4d3a;
+  --bp-mint2: #0e6349;
+  --bp-mint3: #14805f;
+  --bp-mint4: #26a07b;
+  --bp-mint5: #6cd2b2;
+
+  /* Moss — olive-green, used for quieter, earthier sections. */
+  --bp-moss1: #394d1c;
+  --bp-moss2: #495f22;
+  --bp-moss3: #5c7528;
+  --bp-moss4: #76913a;
+  --bp-moss5: #b0c07f;
 
   --bp-orange1: #77450d;
   --bp-orange2: #935610;
@@ -57,69 +72,62 @@
   --bp-red4: #e76a6e;
   --bp-red5: #fa999c;
 
-  --bp-cerulean1: #0c5174;
-  --bp-cerulean3: #147eb3;
-  --bp-cerulean5: #68c1ee;
-
-  --bp-turquoise1: #004d46;
-  --bp-turquoise3: #00a396;
-  --bp-turquoise5: #7ae1d8;
-
-  --bp-violet3: #9d3f9d;
-  --bp-indigo3: #7961db;
-  --bp-gold3: #d1980b;
-
   /* =====================================================================
-     Semantic layer — Blueprint light theme
+     Semantic layer — Forest light theme
      ===================================================================== */
 
-  /* Surfaces: soft white canvas, cards sit one step brighter (pure white). */
-  --surface-app: #f8f9fb;
+  /* Surfaces: soft sage-washed canvas; cards sit one step brighter (white). */
+  --surface-app: #ffffff;
   --surface-raised: var(--bp-white);
   --surface-overlay: var(--bp-white);
-  --surface-sunken: #f1f3f6;
-  --surface-hover: rgba(17, 20, 24, 0.04);
-  --surface-active: rgba(17, 20, 24, 0.08);
+  --surface-sunken: #f2f5e8;
+  --surface-hover: rgba(15, 26, 18, 0.05);
+  --surface-active: rgba(15, 26, 18, 0.09);
 
   /* Text — each level clears WCAG AA (4.5:1) against the lightest surface
      it can land on (--surface-raised, #ffffff). */
   --text-primary: var(--bp-black);
-  --text-secondary: var(--bp-dark-gray4);
-  --text-muted: var(--bp-gray1);
-  --text-disabled: rgba(95, 107, 124, 0.5);
+  --text-secondary: #22382b;
+  --text-muted: #5c6b60;
+  --text-disabled: rgba(92, 107, 96, 0.5);
   --text-inverse: var(--bp-light-gray5);
 
-  /* Borders — Blueprint light theme draws 1px hairlines, never fat strokes. */
-  --border: rgba(17, 20, 24, 0.16);
-  --border-subtle: rgba(17, 20, 24, 0.09);
-  --border-strong: rgba(17, 20, 24, 0.26);
+  /* Borders — fine hairlines in a deep green-black. */
+  --border: rgba(15, 26, 18, 0.16);
+  --border-subtle: rgba(15, 26, 18, 0.09);
+  --border-strong: rgba(15, 26, 18, 0.26);
 
   /* Brand / intent */
-  --accent: var(--bp-blue3);
-  --accent-hover: var(--bp-blue2);
-  --accent-active: var(--bp-blue1);
-  --accent-text: var(--bp-blue2);
-  --accent-surface: rgba(45, 114, 210, 0.09);
-  --accent-border: rgba(45, 114, 210, 0.35);
+  --accent: #186049;
+  --accent-hover: #124b39;
+  --accent-active: #0d3b2d;
+  --accent-text: #186049;
+  --accent-surface: rgba(24, 96, 73, 0.1);
+  --accent-border: rgba(24, 96, 73, 0.36);
 
-  /* Secondary accent — cool cyan that pairs with Blueprint blue without
-     shouting. Used sparingly: gradients, glows, and small highlights. */
-  --accent-2: var(--bp-cerulean3);
-  --accent-2-text: var(--bp-cerulean1);
+  /* Secondary accent — fresh leaf green. Used sparingly: gradients, glows,
+     and small highlights, like new growth against deep forest. */
+  --accent-2: var(--bp-leaf3);
+  --accent-2-text: var(--bp-leaf2);
   --accent-gradient: linear-gradient(
     135deg,
-    var(--bp-blue2) 0%,
-    var(--bp-blue3) 55%,
-    var(--bp-cerulean3) 100%
+    #124b39 0%,
+    #186049 55%,
+    #347b60 100%
   );
-  --glow-blue: rgba(45, 114, 210, 0.13);
-  --glow-cyan: rgba(104, 193, 238, 0.18);
-  --glow-violet: rgba(121, 97, 219, 0.13);
-  --glow-green: rgba(35, 133, 81, 0.1);
+  --glow-forest: rgba(24, 96, 73, 0.11);
+  --glow-leaf: rgba(24, 96, 73, 0.09);
+  --glow-mint: rgba(24, 96, 73, 0.08);
+  --glow-moss: rgba(24, 96, 73, 0.07);
+  /* Legacy names retained as aliases while components migrate. */
+  --glow-blue: var(--glow-forest);
+  --glow-cyan: var(--glow-mint);
+  --glow-violet: var(--glow-moss);
+  --glow-green: var(--glow-forest);
 
-  --success: var(--bp-green3);
-  --success-text: var(--bp-green2);
-  --success-surface: rgba(35, 133, 81, 0.1);
+  --success: #9bd3af;
+  --success-text: #186049;
+  --success-surface: rgba(24, 96, 73, 0.1);
 
   --warning: var(--bp-orange3);
   --warning-text: var(--bp-orange2);
@@ -128,7 +136,7 @@
   --danger: var(--bp-red3);
   --danger-text: var(--bp-red2);
 
-  --focus-ring: 0 0 0 2px var(--surface-app), 0 0 0 4px rgba(45, 114, 210, 0.55);
+  --focus-ring: 0 0 0 2px var(--surface-app), 0 0 0 4px rgba(24, 96, 73, 0.55);
 
   /* ---- Typography ------------------------------------------------------ */
   --font-sans:
@@ -147,8 +155,6 @@
   --text-3xl: 46px;
   --text-4xl: 60px;
 
-  /* Blueprint's density is 1.285, but that is tuned for UI chrome rather than
-     long-form prose. Two tokens keep the console feel without hurting body copy. */
   --leading-tight: 1.15;
   --leading-ui: 1.285;
   --leading-snug: 1.35;
@@ -158,7 +164,7 @@
   --tracking-label: 0.1em;
   --tracking-tight: -0.02em;
 
-  /* ---- Spacing: Blueprint's 10px grid, half-steps of 5px --------------- */
+  /* ---- Spacing: 10px grid, half-steps of 5px --------------------------- */
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -170,16 +176,19 @@
   --space-9: 80px;
   --space-10: 120px;
 
-  /* ---- Shape: Blueprint's signature near-square corners ---------------- */
-  --radius-sm: 2px;
-  --radius: 2px;
-  --radius-lg: 4px;
+  /* ---- Shape: soft, organic corners instead of Blueprint's sharp 2px ---- */
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 14px;
   --radius-pill: 999px;
 
-  /* ---- Elevation: flat, border-led, minimal blur ----------------------- */
-  --shadow-1: 0 0 0 1px rgba(17, 20, 24, 0.05), 0 1px 2px rgba(17, 20, 24, 0.07);
-  --shadow-2: 0 0 0 1px rgba(17, 20, 24, 0.06), 0 4px 10px rgba(17, 20, 24, 0.09);
-  --shadow-3: 0 0 0 1px rgba(17, 20, 24, 0.06), 0 10px 28px rgba(17, 20, 24, 0.14);
+  /* ---- Elevation: flat, border-led, gentle green-tinted shadows --------- */
+  --shadow-1:
+    0 0 0 1px rgba(15, 26, 18, 0.04), 0 1px 2px rgba(15, 26, 18, 0.06);
+  --shadow-2:
+    0 0 0 1px rgba(15, 26, 18, 0.05), 0 4px 10px rgba(15, 26, 18, 0.08);
+  --shadow-3:
+    0 0 0 1px rgba(15, 26, 18, 0.05), 0 10px 28px rgba(15, 26, 18, 0.12);
 
   /* ---- Motion ---------------------------------------------------------- */
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
