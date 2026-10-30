@@ -22,9 +22,11 @@ html {
 
 body {
   background-color: var(--surface-app);
+  background-image: linear-gradient(180deg, #ffffff 0%, #ffffff 58%, #f7f9f5 100%);
   color: var(--text-primary);
   font-family: var(--font-sans);
   font-size: var(--text-base);
+  font-weight: 500;
   line-height: var(--leading-base);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -33,110 +35,10 @@ body {
   overflow-x: hidden;
 }
 
-/* ============================================================================
-   Backdrop — fixed decorative layers behind all content
-   ----------------------------------------------------------------------------
-   Rendered by <Backdrop /> (src/components/Backdrop.jsx). Parallax drift is
-   driven from React through --parallax (0 → 1 over the page).
-   ========================================================================= */
-
+/* Empty backdrop retained as a stacking layer; visual texture comes from the
+   clean page gradient rather than decorative grids or ornaments. */
 .backdrop {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  /* Subtle upward drift as the page scrolls — depth without distraction. */
-  transform: translate3d(0, calc(var(--parallax, 0) * -56px), 0);
-  will-change: transform;
-}
-
-.backdrop > span {
-  position: absolute;
-  inset: 0;
-}
-
-/* Corner colour washes: blue, cyan, violet, green — a lit space, not paper. */
-.backdrop__wash {
-  background-image:
-    radial-gradient(1200px 720px at 4% -12%, var(--glow-blue), transparent 68%),
-    radial-gradient(1020px 640px at 98% -10%, var(--glow-cyan), transparent 68%),
-    radial-gradient(980px 720px at 96% 110%, var(--glow-violet), transparent 70%),
-    radial-gradient(860px 620px at -4% 104%, var(--glow-green), transparent 70%);
-}
-
-/* Blueprint grid: 64px minor cells plus 320px major lines with a blue tint,
-   masked so it breathes at the top and dissolves toward the bottom. */
-.backdrop__grid {
-  background-image:
-    linear-gradient(to right, rgba(45, 114, 210, 0.085) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(45, 114, 210, 0.085) 1px, transparent 1px),
-    linear-gradient(to right, rgba(17, 20, 24, 0.055) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(17, 20, 24, 0.055) 1px, transparent 1px);
-  background-size:
-    320px 320px,
-    320px 320px,
-    64px 64px,
-    64px 64px;
-  mask-image: radial-gradient(ellipse 100% 90% at 50% 28%, #000 32%, transparent 100%);
-  -webkit-mask-image: radial-gradient(
-    ellipse 100% 90% at 50% 28%,
-    #000 32%,
-    transparent 100%
-  );
-}
-
-/* Slow aurora drift — compositor-friendly: one transformed layer, no blur. */
-.backdrop__aurora {
-  background:
-    radial-gradient(closest-side, rgba(76, 144, 240, 0.18), transparent 74%) 16% 18% / 48%
-      48% no-repeat,
-    radial-gradient(closest-side, rgba(104, 193, 238, 0.2), transparent 74%) 86% 12% / 44%
-      44% no-repeat,
-    radial-gradient(closest-side, rgba(157, 63, 157, 0.15), transparent 74%) 90% 88% / 50%
-      50% no-repeat,
-    radial-gradient(closest-side, rgba(35, 133, 81, 0.12), transparent 74%) 6% 90% / 46%
-      46% no-repeat;
-  animation: aurora 26s ease-in-out infinite alternate;
-  will-change: transform;
-}
-
-@keyframes aurora {
-  from {
-    transform: translate3d(-2.5%, -1.5%, 0) scale(1);
-  }
-  to {
-    transform: translate3d(2.5%, 2.5%, 0) scale(1.09);
-  }
-}
-
-/* Plus-marks at sparse 320px intersections — surveyor's cadence marks. */
-.backdrop__marks {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cpath d='M160 150v20M150 160h20' stroke='%232d72d2' stroke-opacity='.28' stroke-width='1.25'/%3E%3C/svg%3E");
-  background-size: 320px 320px;
-  mask-image: radial-gradient(ellipse 80% 65% at 50% 25%, #000 18%, transparent 95%);
-  -webkit-mask-image: radial-gradient(
-    ellipse 80% 65% at 50% 25%,
-    #000 18%,
-    transparent 95%
-  );
-}
-
-/* Film-grain finish so large flat areas never band or feel sterile. */
-.backdrop__grain {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size: 160px 160px;
-  opacity: 0.07;
-  mix-blend-mode: multiply;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .backdrop {
-    transform: none;
-  }
-
-  .backdrop__aurora {
-    animation: none;
-  }
+  display: none;
 }
 
 /* Lift real content above the backdrop. */
@@ -349,16 +251,16 @@ ol {
     --text-secondary: #383e47;
     --text-muted: #5f6b7c;
 
-    --border: rgba(17, 20, 24, 0.2);
-    --border-subtle: rgba(17, 20, 24, 0.12);
+    --border: rgba(15, 26, 18, 0.2);
+    --border-subtle: rgba(15, 26, 18, 0.12);
 
-    --accent: #215db0;
-    --accent-text: #215db0;
-    --accent-surface: rgba(45, 114, 210, 0.1);
-    --accent-border: rgba(45, 114, 210, 0.4);
+    --accent: #186049;
+    --accent-text: #186049;
+    --accent-surface: rgba(24, 96, 73, 0.1);
+    --accent-border: rgba(24, 96, 73, 0.4);
 
-    --success-text: #1c6e42;
-    --success-surface: rgba(28, 110, 66, 0.1);
+    --success-text: #186049;
+    --success-surface: rgba(24, 96, 73, 0.1);
     --warning-text: #935610;
     --warning-surface: rgba(147, 86, 16, 0.1);
   }

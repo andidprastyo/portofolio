@@ -35,7 +35,10 @@ function ProjectCard({ project }) {
 
       <div className="card__content">
         <div className="card__head">
-          <h3 className="card__title">{project.title}</h3>
+          <h3 className="card__title">
+            <Icon name="leaf" size={16} className="card__title-icon" />
+            {project.title}
+          </h3>
           <div className="card__meta">
             <span className="card__year mono">{project.year}</span>
             <StatusBadge status={project.status} />

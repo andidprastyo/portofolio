@@ -45,11 +45,11 @@ export const socials = [
    blue | cyan | green | violet. Keep each label short.
    ------------------------------------------------------------------------ */
 export const focusAreas = [
-  { label: 'AI Engineering', tone: 'blue' },
-  { label: 'Geospatial Intelligence', tone: 'cyan' },
+    { label: 'AI Engineering', tone: 'green' },
+    { label: 'Geospatial Intelligence', tone: 'cyan' },
   { label: 'Data Platforms', tone: 'green' },
   { label: 'IoT & Edge AI', tone: 'violet' },
-  { label: 'Solution Architecture', tone: 'blue' },
+    { label: 'Solution Architecture', tone: 'green' },
 ]
 
 /* ---- Experience ---------------------------------------------------------

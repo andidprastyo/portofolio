@@ -9,15 +9,10 @@ export default function Contact() {
       id="contact"
       index={4}
       title="Contact"
-      description="Have a role, a project, or a question? I read everything."
       tone="green"
     >
       <div className="contact">
         <div className="contact__panel">
-          <p className="contact__lede">
-            The fastest way to reach me is email. I usually reply within a day.
-          </p>
-
           <ul className="contact__list">
             {socials.map((social) => (
               <li key={social.label}>
