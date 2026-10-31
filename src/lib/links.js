@@ -1,10 +1,5 @@
-/**
- * Link helpers shared by every component that renders an anchor.
- *
- * The `target`/`rel` pair used to be duplicated inline in three components;
- * centralising it keeps the behaviour (and the `noopener` hardening) identical
- * everywhere and removes the chance of one call site drifting.
- */
+/* Anchor helpers shared by every component, so `target`/`rel` hardening
+   stays identical at each call site. */
 
 /**
  * Allow only URL schemes used by this site. Invalid values fall back to a
@@ -19,7 +14,7 @@ export function sanitizeHref(href = '') {
   return '#'
 }
 
-/** True for absolute http(s) URLs — the only links that leave the site. */
+/** True for absolute http(s) URLs, the only links that leave the site. */
 export function isExternalUrl(href = '') {
   return /^https?:\/\//i.test(sanitizeHref(href))
 }

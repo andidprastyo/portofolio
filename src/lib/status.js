@@ -6,7 +6,7 @@ export const STATUS_LABEL = {
   archived: 'Archived',
 }
 
-/** Canonical sort order for statuses — alphabetical would be meaningless. */
+/** Canonical sort order for statuses, because alphabetical order is meaningless. */
 export const STATUS_ORDER = ['shipped', 'active', 'wip', 'archived']
 
 /** Falls back to the raw value so an unknown status still renders something. */

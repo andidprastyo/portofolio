@@ -1,15 +1,8 @@
-/* ============================================================================
-   Forest — nature-inspired design tokens
-   ----------------------------------------------------------------------------
-   A botanical rethink of the original Blueprint-inspired palette. The raw
-   greens are taken from Blueprint's open-source hue scales (Apache-2.0) and
-   extended with leaf, mint, and moss families. Semantic aliases below keep a
-   *light theme* — a soft sage-washed white canvas with white raised surfaces —
-   so the site reads like a field journal rather than an operations console.
-   ========================================================================= */
+/* Forest tokens: botanical palette extended from Blueprint's Apache-2.0
+   hue scales, plus semantic aliases for the light theme. */
 
 :root {
-  /* ---- Raw palette: gray scale ---------------------------------------- */
+  /* Raw palette: gray scale */
   --bp-black: #0f1a12;
 
   --bp-dark-gray1: #1c2127;
@@ -32,28 +25,28 @@
 
   --bp-white: #ffffff;
 
-  /* ---- Raw palette: greens ------------------------------------------- */
+  /* Raw palette: greens */
   --bp-green1: #155a35;
   --bp-green2: #1c6e42;
   --bp-green3: #238551;
   --bp-green4: #33a467;
   --bp-green5: #72ca9b;
 
-  /* Fresh leaf — a lively yellow-green for secondary accents. */
+  /* Fresh leaf: a lively yellow-green for secondary accents. */
   --bp-leaf1: #4a6100;
   --bp-leaf2: #5e7705;
   --bp-leaf3: #7a9612;
   --bp-leaf4: #98b432;
   --bp-leaf5: #c9d97c;
 
-  /* Mint — cool teal-green, the "water and undergrowth" hue. */
+  /* Mint: cool teal-green, the "water and undergrowth" hue. */
   --bp-mint1: #0c4d3a;
   --bp-mint2: #0e6349;
   --bp-mint3: #14805f;
   --bp-mint4: #26a07b;
   --bp-mint5: #6cd2b2;
 
-  /* Moss — olive-green, used for quieter, earthier sections. */
+  /* Moss: olive-green, used for quieter, earthier sections. */
   --bp-moss1: #394d1c;
   --bp-moss2: #495f22;
   --bp-moss3: #5c7528;
@@ -72,19 +65,20 @@
   --bp-red4: #e76a6e;
   --bp-red5: #fa999c;
 
-  /* =====================================================================
-     Semantic layer — Forest light theme
-     ===================================================================== */
+  /* Semantic layer: Forest light theme */
 
   /* Surfaces: soft sage-washed canvas; cards sit one step brighter (white). */
   --surface-app: #ffffff;
   --surface-raised: var(--bp-white);
   --surface-overlay: var(--bp-white);
   --surface-sunken: #f2f5e8;
+  --surface-deep: #16543f;
+  --surface-deep-hover: #1b6249;
+  --surface-deep-sunken: #123f30;
   --surface-hover: rgba(15, 26, 18, 0.05);
   --surface-active: rgba(15, 26, 18, 0.09);
 
-  /* Text — each level clears WCAG AA (4.5:1) against the lightest surface
+  /* Text: each level clears WCAG AA (4.5:1) against the lightest surface
      it can land on (--surface-raised, #ffffff). */
   --text-primary: var(--bp-black);
   --text-secondary: #22382b;
@@ -92,7 +86,7 @@
   --text-disabled: rgba(92, 107, 96, 0.5);
   --text-inverse: var(--bp-light-gray5);
 
-  /* Borders — fine hairlines in a deep green-black. */
+  /* Borders: fine hairlines in a deep green-black. */
   --border: rgba(15, 26, 18, 0.16);
   --border-subtle: rgba(15, 26, 18, 0.09);
   --border-strong: rgba(15, 26, 18, 0.26);
@@ -105,16 +99,10 @@
   --accent-surface: rgba(24, 96, 73, 0.1);
   --accent-border: rgba(24, 96, 73, 0.36);
 
-  /* Secondary accent — fresh leaf green. Used sparingly: gradients, glows,
-     and small highlights, like new growth against deep forest. */
+  /* Secondary accent: fresh leaf green, reserved for the avatar ring and
+     small highlights, like new growth against deep forest. */
   --accent-2: var(--bp-leaf3);
   --accent-2-text: var(--bp-leaf2);
-  --accent-gradient: linear-gradient(
-    135deg,
-    #124b39 0%,
-    #186049 55%,
-    #347b60 100%
-  );
   --glow-forest: rgba(24, 96, 73, 0.11);
   --glow-leaf: rgba(24, 96, 73, 0.09);
   --glow-mint: rgba(24, 96, 73, 0.08);
@@ -136,9 +124,9 @@
   --danger: var(--bp-red3);
   --danger-text: var(--bp-red2);
 
-  --focus-ring: 0 0 0 2px var(--surface-app), 0 0 0 4px rgba(24, 96, 73, 0.55);
+  --focus-ring: 0 0 0 2px var(--surface-app), 0 0 0 4px rgba(24, 96, 73, 0.85);
 
-  /* ---- Typography ------------------------------------------------------ */
+  /* Typography */
   --font-sans:
     'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -164,7 +152,7 @@
   --tracking-label: 0.1em;
   --tracking-tight: -0.02em;
 
-  /* ---- Spacing: 10px grid, half-steps of 5px --------------------------- */
+  /* Spacing: 10px grid, half-steps of 5px */
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -176,27 +164,24 @@
   --space-9: 80px;
   --space-10: 120px;
 
-  /* ---- Shape: soft, organic corners instead of Blueprint's sharp 2px ---- */
+  /* Shape: soft, organic corners instead of Blueprint's sharp 2px */
   --radius-sm: 6px;
   --radius: 10px;
   --radius-lg: 14px;
   --radius-pill: 999px;
 
-  /* ---- Elevation: flat, border-led, gentle green-tinted shadows --------- */
-  --shadow-1:
-    0 0 0 1px rgba(15, 26, 18, 0.04), 0 1px 2px rgba(15, 26, 18, 0.06);
-  --shadow-2:
-    0 0 0 1px rgba(15, 26, 18, 0.05), 0 4px 10px rgba(15, 26, 18, 0.08);
-  --shadow-3:
-    0 0 0 1px rgba(15, 26, 18, 0.05), 0 10px 28px rgba(15, 26, 18, 0.12);
+  /* Elevation: flat, border-led, gentle green-tinted shadows */
+  --shadow-1: 0 0 0 1px rgba(15, 26, 18, 0.04), 0 1px 2px rgba(15, 26, 18, 0.06);
+  --shadow-2: 0 0 0 1px rgba(15, 26, 18, 0.05), 0 4px 10px rgba(15, 26, 18, 0.08);
+  --shadow-3: 0 0 0 1px rgba(15, 26, 18, 0.05), 0 10px 28px rgba(15, 26, 18, 0.12);
 
-  /* ---- Motion ---------------------------------------------------------- */
+  /* Motion */
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
   --duration-fast: 100ms;
   --duration: 180ms;
   --duration-slow: 320ms;
 
-  /* ---- Layout ---------------------------------------------------------- */
+  /* Layout */
   --container: 1180px;
   --nav-height: 52px;
   --z-nav: 100;

@@ -27,6 +27,8 @@ function ProjectCard({ project }) {
           <img
             src={project.image}
             alt={project.imageAlt ?? `${project.title} preview`}
+            width={project.imageWidth ?? 1200}
+            height={project.imageHeight ?? 716}
             loading="lazy"
             decoding="async"
           />
@@ -35,10 +37,7 @@ function ProjectCard({ project }) {
 
       <div className="card__content">
         <div className="card__head">
-          <h3 className="card__title">
-            <Icon name="leaf" size={16} className="card__title-icon" />
-            {project.title}
-          </h3>
+          <h3 className="card__title">{project.title}</h3>
           <div className="card__meta">
             <span className="card__year mono">{project.year}</span>
             <StatusBadge status={project.status} />
@@ -86,7 +85,6 @@ function ProjectCard({ project }) {
               >
                 <Icon name={linkIcon(link)} size={13} />
                 {link.label}
-                <Icon name="arrow-right" size={13} className="card__link-arrow" />
               </a>
             ))}
           </div>
@@ -97,22 +95,24 @@ function ProjectCard({ project }) {
 }
 
 export default function Projects() {
-  if (projects.length === 0) return null
-
   return (
     <Section
       id="projects"
       index={2}
       title="Projects"
-      description="Selected work — internal platforms, tools, and experiments."
+      description="Selected work: internal platforms, tools, and experiments."
       variant="band"
       tone="cyan"
     >
-      <div className="projects">
-        {projects.map((project) => (
-          <ProjectCard key={project.title} project={project} />
-        ))}
-      </div>
+      {projects.length === 0 ? (
+        <p className="section__empty">Selected work is being updated. Check back soon.</p>
+      ) : (
+        <div className="projects">
+          {projects.map((project) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
+        </div>
+      )}
     </Section>
   )
 }

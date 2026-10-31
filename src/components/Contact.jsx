@@ -5,12 +5,7 @@ import Section from './Section'
 
 export default function Contact() {
   return (
-    <Section
-      id="contact"
-      index={4}
-      title="Contact"
-      tone="green"
-    >
+    <Section id="contact" index={4} title="Contact" tone="green">
       <div className="contact">
         <div className="contact__panel">
           <ul className="contact__list">
@@ -28,7 +23,6 @@ export default function Contact() {
                   <span className="contact__link-value mono">
                     {social.href.replace(/^mailto:/, '')}
                   </span>
-                  <Icon name="arrow-right" size={14} />
                 </a>
               </li>
             ))}

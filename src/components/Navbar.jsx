@@ -26,6 +26,18 @@ export default function Navbar() {
     return () => mq.removeEventListener('change', onChange)
   }, [])
 
+  // Escape closes the drawer, matching the keyboard behaviour of a dialog.
+  useEffect(() => {
+    if (!menuOpen) return
+
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') setMenuOpen(false)
+    }
+
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [menuOpen])
+
   const initials = profile.name
     .split(' ')
     .slice(0, 2)
@@ -35,7 +47,7 @@ export default function Navbar() {
   return (
     <header className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
       <div className="container nav__inner">
-        <a href="#top" className="nav__brand" aria-label={`${profile.name} — home`}>
+        <a href="#top" className="nav__brand">
           <span className="nav__mark mono" aria-hidden="true">
             {initials}
           </span>
