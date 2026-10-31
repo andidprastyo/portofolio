@@ -3,19 +3,21 @@ import { experience } from '../data/portfolio'
 import { Icon } from './Icon'
 import Section from './Section'
 
-/**
- * Role explorer — a tabbed workbench instead of a résumé timeline.
- * The rail lists roles; the panel shows the selected role's scope, impact
- * tiles, and toolkit. Every panel stays mounted so print output keeps the
- * full history (see the print rules in base.css).
- */
+/* Role explorer: a tabbed workbench instead of a résumé timeline. Every panel
+   stays mounted so print output keeps the full history. */
 export default function Experience() {
   const [activeIndex, setActiveIndex] = useState(0)
   const tabRefs = useRef([])
 
-  if (experience.length === 0) return null
-
   const count = String(experience.length).padStart(2, '0')
+
+  if (experience.length === 0) {
+    return (
+      <Section id="experience" index={3} title="Experience" tone="violet">
+        <p className="section__empty">Role history is being updated.</p>
+      </Section>
+    )
+  }
 
   function onTabKeyDown(event, index) {
     const last = experience.length - 1
@@ -57,12 +59,7 @@ export default function Experience() {
         <div className="xp__rail">
           <p className="xp__rail-label eyebrow">Roles</p>
 
-          <div
-            className="xp__tabs"
-            role="tablist"
-            aria-label="Roles"
-            aria-orientation="vertical"
-          >
+          <div className="xp__tabs" role="tablist" aria-label="Roles">
             {experience.map((job, index) => (
               <button
                 key={`${job.company}-${job.role}-${job.start}`}
@@ -83,7 +80,7 @@ export default function Experience() {
                   <span className="xp__tab-role">{job.role}</span>
                   <span className="xp__tab-company">{job.company}</span>
                   <span className="xp__tab-period mono">
-                    {job.start} — {job.end}
+                    {job.start} to {job.end}
                   </span>
                 </span>
                 <span className="xp__tab-arrow" aria-hidden="true">
@@ -116,7 +113,7 @@ export default function Experience() {
 
                 <div className="xp__head-meta">
                   <span className="xp__period mono">
-                    {job.start} — {job.end}
+                    {job.start} to {job.end}
                   </span>
                   {job.location && (
                     <span className="xp__location">

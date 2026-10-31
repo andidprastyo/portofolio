@@ -1,6 +1,4 @@
-/* ============================================================================
-   Base — reset, document defaults, shared primitives
-   ========================================================================= */
+/* Base: reset, document defaults, shared primitives */
 
 *,
 *::before,
@@ -22,7 +20,6 @@ html {
 
 body {
   background-color: var(--surface-app);
-  background-image: linear-gradient(180deg, #ffffff 0%, #ffffff 58%, #f7f9f5 100%);
   color: var(--text-primary);
   font-family: var(--font-sans);
   font-size: var(--text-base);
@@ -32,11 +29,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   min-height: 100dvh;
-  overflow-x: hidden;
 }
 
 /* Empty backdrop retained as a stacking layer; visual texture comes from the
-   clean page gradient rather than decorative grids or ornaments. */
+   clean page surface rather than decorative grids or ornaments. */
 .backdrop {
   display: none;
 }
@@ -65,7 +61,23 @@ select {
 button {
   background: none;
   border: none;
+}
+
+/* Pointer affordance once, in the base layer, for every enabled control. */
+a[href],
+button:not(:disabled),
+summary,
+select:not(:disabled),
+label[for],
+input[type='checkbox']:not(:disabled),
+input[type='radio']:not(:disabled) {
   cursor: pointer;
+}
+
+button:disabled,
+select:disabled,
+input:disabled {
+  cursor: not-allowed;
 }
 
 a {
@@ -96,7 +108,7 @@ ol {
   color: var(--bp-white);
 }
 
-/* ---- Scrollbar: thin, console-like ---------------------------------- */
+/* Scrollbar: thin, console-like */
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--bp-gray4) transparent;
@@ -121,9 +133,7 @@ ol {
   background: var(--bp-gray2);
 }
 
-/* ============================================================================
-   Shared primitives
-   ========================================================================= */
+/* Shared primitives */
 
 .container {
   width: 100%;
@@ -138,7 +148,7 @@ ol {
   }
 }
 
-/* Monospace micro-label — the single most "Blueprint" typographic tell. */
+/* Monospace micro-label, the single most "Blueprint" typographic tell. */
 .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -166,11 +176,8 @@ ol {
   font-variant-numeric: tabular-nums;
 }
 
-/* ---- Skip link ---------------------------------------------------------
-   Parked off-screen until focused, then it slides in as a solid accent
-   button. A clipped `.sr-only` element stays invisible even when focused,
-   which makes the link useless to the keyboard users it exists to serve.
-   ---------------------------------------------------------------------- */
+/* Parked off-screen until focused; a clipped `.sr-only` link would stay
+   invisible to the keyboard users it serves. */
 .skip-link {
   position: fixed;
   top: var(--space-3);
@@ -178,7 +185,7 @@ ol {
   z-index: 200;
   display: inline-flex;
   align-items: center;
-  height: 36px;
+  height: 44px;
   padding: 0 var(--space-4);
   font-size: var(--text-base);
   font-weight: 500;
@@ -198,7 +205,7 @@ ol {
   text-decoration: none;
 }
 
-/* ---- Scroll reveal --------------------------------------------------- */
+/* Scroll reveal */
 .reveal {
   opacity: 0;
   transform: translateY(14px);
@@ -231,13 +238,8 @@ ol {
   }
 }
 
-/* ============================================================================
-   Print
-   ----------------------------------------------------------------------------
-   Recruiters print portfolios and export them to PDF. Because every component
-   reads semantic tokens, re-pointing those tokens here flips the entire site
-   to a light, ink-friendly theme without touching a single component rule.
-   ========================================================================= */
+/* Print re-points the semantic tokens to ink-friendly colors, so the whole
+   site flips theme without touching a component rule. */
 
 @media print {
   :root {

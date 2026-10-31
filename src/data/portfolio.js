@@ -1,12 +1,5 @@
-/* ============================================================================
-   SITE CONTENT
-   ----------------------------------------------------------------------------
-   >>> THIS IS THE ONLY FILE YOU NEED TO EDIT FOR ROUTINE UPDATES. <<<
-
-   Every value below is a PLACEHOLDER. Replace the text between the quotes with
-   your real details, then reload the dev server. Delete any array item you
-   don't need — every section renders only if it has content.
-   ========================================================================= */
+/* Site content: every value the site renders lives here. A section renders
+   only when its data has entries, so deleting an item removes it cleanly. */
 
 export const profile = {
   // Shown in the navbar, hero, and browser title.
@@ -16,11 +9,11 @@ export const profile = {
   // One-sentence pitch. Keep it under ~160 characters.
   tagline:
     'I bridge business needs and technical solutions, turning complex requirements into reliable, scalable systems.',
-  // 2–3 short paragraphs for the About section.
+  // 2 to 3 short paragraphs for the About section.
   bio: [
-    'I am a Solution Engineer at Telkomsat, building scalable, AI-powered solutions using machine learning, LLMs, and geospatial intelligence to solve real-world problems.',
-    'I work across solution design, data pipelines, and intelligent system development, translating complex technical challenges into practical, impactful solutions.',
-    'Currently exploring interesting challenges in AI engineering, geospatial intelligence, and scalable solution architecture.',
+    'I work at Telkomsat as a Solutions Engineer, building systems with machine learning, LLMs, and geospatial data for government and enterprise clients.',
+    'My work covers solution design, data pipelines, and intelligent systems. I translate technical constraints into something a client can operate.',
+    'I am currently working on AI engineering, geospatial intelligence, and solution architecture.',
   ],
   // Where you're based, and how you prefer to work.
   location: 'Bogor, Jawa Barat',
@@ -31,30 +24,23 @@ export const profile = {
   resumeUrl: null,
 }
 
-/* ---- Social / contact links --------------------------------------------
-   `icon` accepts: github | linkedin | x | mail | link
-   ------------------------------------------------------------------------ */
+/* Social links. `icon` accepts: github | linkedin | x | mail | link. */
 export const socials = [
   { label: 'GitHub', href: 'https://github.com/andidprastyo', icon: 'github' },
   { label: 'LinkedIn', href: 'https://linkedin.com/in/andidprastyo', icon: 'linkedin' },
   { label: 'Email', href: 'mailto:andidprastyo@gmail.com', icon: 'mail' },
 ]
 
-/* ---- Hero ticker --------------------------------------------------------
-   Decorative strip under the hero. `tone` picks the marker colour:
-   blue | cyan | green | violet. Keep each label short.
-   ------------------------------------------------------------------------ */
+/* Focus-area strip under the hero. `tone` is blue | cyan | green | violet. */
 export const focusAreas = [
-    { label: 'AI Engineering', tone: 'green' },
-    { label: 'Geospatial Intelligence', tone: 'cyan' },
+  { label: 'AI Engineering', tone: 'green' },
+  { label: 'Geospatial Intelligence', tone: 'cyan' },
   { label: 'Data Platforms', tone: 'green' },
   { label: 'IoT & Edge AI', tone: 'violet' },
-    { label: 'Solution Architecture', tone: 'green' },
+  { label: 'Solution Architecture', tone: 'green' },
 ]
 
-/* ---- Experience ---------------------------------------------------------
-   Newest first. `highlights` is optional.
-   ------------------------------------------------------------------------ */
+/* Experience, newest first. `highlights` is optional. */
 export const experience = [
   {
     role: 'Solutions Engineer',
@@ -67,7 +53,7 @@ export const experience = [
     highlights: [
       'Engage with government agencies, state-owned enterprises, and private companies across industries, including forestry and environmental management, to identify needs and design tailored solutions.',
       'TSATSense (IoT): Developed machine learning models for fuel tank volume prediction and edge AI across 4 live CCTV streams to improve operational efficiency and workplace safety.',
-      'GeoTSAT (Earth Intelligence): Delivered geospatial solutions, including GeoTSAT.id for LULC visualization and AI-powered forest fire monitoring using 100K+ hotspot records, wind data, and chatbot-based decision support.',
+      'GeoTSAT (Earth Intelligence): Built GeoTSAT.id for LULC visualization and forest fire monitoring using 100K+ hotspot records, wind data, and a chatbot for decision support.',
       'Forestry & ESG: Developing web-based carbon stock monitoring solutions using Sentinel-1/2, GLO-30, GEDI, canopy models, and machine learning to support forest carbon assessment and environmental monitoring.',
     ],
     stack: [
@@ -88,11 +74,11 @@ export const experience = [
     start: 'Jul 2025',
     end: 'May 2026',
     summary:
-      'Streamlined data access and reporting by integrating AI-driven querying with automated data pipelines, supporting faster analysis and data-driven decision-making across 6 BI dashboards.',
+      'Connected production data to BigQuery and built an n8n SQL agent that feeds 6 BI dashboards.',
     highlights: [
-      'Built an AI- powered SQL Agent using n8n and Qwen2.5:7B (Ollama) to automate natural language querying, analysis, and insights across 100K+ multi-table datasets.',
-      'Developed a Python pipeline syncing production database data to Google BigQuery every 5 minutes, powering 6 BI dashboards through dedicated data marts with near-real-time data updates.',
-      'Streamlined data access and reporting by integrating AI-driven querying with automated data pipelines, supporting faster analysis and data-driven decision-making across 6 BI dashboards.',
+      'Built a SQL agent with n8n and Qwen2.5:7B (Ollama) that answers questions across 100K+ multi-table datasets.',
+      'Built a Python pipeline that syncs production data to Google BigQuery every 5 minutes and feeds 6 BI dashboards through dedicated data marts.',
+      'Connected AI querying to automated pipelines, which shortened the path from raw data to a report.',
     ],
     stack: ['Python', 'MySQL', 'Google BigQuery', 'Docker', 'n8n', 'Ollama', 'Power BI'],
   },
@@ -103,11 +89,11 @@ export const experience = [
     start: 'Jun 2024',
     end: 'Jun 2025',
     summary:
-      'Developed and optimized AI-based traffic monitoring prototypes, focusing on real-time vehicle detection, tracking, and edge computing using YOLOv5n on NVIDIA Jetson Nano.',
+      'Built traffic monitoring prototypes that detect and track vehicles in real time on an NVIDIA Jetson Nano.',
     highlights: [
-      'Developed a real-time vehicle counting system using YOLOv5n on NVIDIA Jetson Nano, achieving 85%+ detection accuracy with a custom Python-based tracking algorithm.',
-      'Designed and tested AI-based traffic monitoring prototypes under university- funded research projects, focusing on real- time vehicle detection, tracking, and edge computing.',
-      'Optimized computer vision models for edge deployment, enabling real-time inference on resource-constrained NVIDIA Jetson hardware.',
+      'Built a vehicle counting system with YOLOv5n on an NVIDIA Jetson Nano that reached 85%+ detection accuracy using a custom Python tracker.',
+      'Designed and tested traffic monitoring prototypes for university-funded research projects, covering real-time detection, tracking, and edge computing.',
+      'Optimized computer vision models for edge deployment so they run in real time on limited hardware.',
     ],
     stack: ['Python', 'YOLOv5', 'NVIDIA Jetson Nano', 'OpenCV', 'Flask', 'Docker'],
   },
@@ -118,11 +104,11 @@ export const experience = [
     start: 'Aug 2024',
     end: 'Dec 2024',
     summary:
-      'Developed a system to identify internet coverage area for specific coordinates, achieving a 95% reduction in negative values and enabling accurate analysis for 10,000+ beam coordinate checks monthly by optimizing network sizing algorithms.',
+      'Built a coverage-check system for beam coordinates and a LLaMA retrieval pipeline over the Telkomsat knowledge base.',
     highlights: [
-      'Developed a system to identify internet coverage area for specific coordinates, achieving a 95% reduction in negative values and enabling accurate analysis for 10,000+ beam coordinate checks monthly by optimizing network sizing algorithms.',
-      'Implemented a scalable pipeline integrating LLaMA (LLaMA 3.2 1B model) with Telkomsat’s proprietary knowledge base, improving retrieval accuracy by 40% across 100,000+ documents by fine-tuning the model and enhancing indexing techniques.',
-      'Utilized Vertex AI Notebooks to reduce analysis time by 30% and enhance reporting clarity for 10+ stakeholders.',
+      'Built a system that identifies the internet coverage area for specific coordinates, which cut negative values by 95% and supported 10,000+ beam coordinate checks a month.',
+      'Built a retrieval pipeline on LLaMA 3.2 1B over the Telkomsat knowledge base, which improved retrieval accuracy by 40% across 100,000+ documents.',
+      'Used Vertex AI Notebooks to cut analysis time by 30% and make reports clearer for 10+ stakeholders.',
     ],
     stack: ['Python', 'LLaMA', 'Vertex AI', 'PostgreSQL/PostGIS', 'Docker', 'n8n'],
   },
@@ -133,11 +119,11 @@ export const experience = [
     start: 'Feb 2024',
     end: 'Jun 2024',
     summary:
-      'Developed Legalytics, a legal analytics dashboard that improved data retrieval speeds by 40% through optimized database queries and advanced caching strategies, while automating the analysis of 500+ legal documents using GPT-3.5 Turbo and implementing a legal precedent retrieval system with sentence-transformers.',
+      'Built Legalytics, a legal analytics dashboard with faster queries and automated document analysis.',
     highlights: [
-      'Designed and deployed Legalytics, a legal analytics dashboard that improved data retrieval speeds by 40% through optimized database queries and advanced caching strategies.',
-      'Automated analysis of 500+ legal documents using GPT-3.5 Turbo, implementing prompt engineering to extract key provisions and generate comparative insights.',
-      'Developed a legal precedent retrieval system using sentence-transformers, reducing research time by 30% through semantic search capabilities.',
+      'Designed and deployed Legalytics, a legal analytics dashboard that cut data retrieval time by 40% through query optimization and caching.',
+      'Automated analysis of 500+ legal documents with GPT-3.5 Turbo, using prompt engineering to extract provisions and generate comparisons.',
+      'Built a legal precedent search with sentence-transformers that reduced research time by 30%.',
     ],
     stack: [
       'Python',
@@ -150,22 +136,21 @@ export const experience = [
   },
 ]
 
-/* ---- Projects -----------------------------------------------------------
-   `status` drives the badge colour. One of:
-   shipped | active | wip | archived
-   Set `featured: true` to make a card span the full grid width.
-   ------------------------------------------------------------------------ */
+/* Projects. `status`: shipped | active | wip | archived. `featured: true`
+   makes a card span the full grid width. */
 export const projects = [
   {
     title: 'OLIST Store ELT Pipeline',
     image: '/projects/olist.png',
+    imageWidth: 782,
+    imageHeight: 398,
     imageAlt:
       'OLIST ELT pipeline diagram: Kaggle CSVs ingested with Python, uploaded to S3, transformed with dbt and DuckDB, and served to Postgres and Metabase.',
     status: 'wip',
     featured: true,
     year: '2024',
     description:
-      'A high-performance ELT pipeline that extracts and loads large-scale e-commerce data into DuckDB-WASM before transforming it for efficient querying and analysis.',
+      'An ELT pipeline that loads e-commerce CSVs into DuckDB, transforms them with dbt, and serves the result to Postgres and Metabase.',
     stack: ['Python', 'PostgreSQL', 'DuckDB', 'Docker', 'AWS EC2', 'AWS S3'],
     links: [
       {
@@ -178,12 +163,14 @@ export const projects = [
   {
     title: 'GeoTSAT',
     image: '/projects/geotsat.jpeg',
+    imageWidth: 1200,
+    imageHeight: 717,
     imageAlt:
       'GeoTSAT landing page with satellite imagery of terraced rice fields and the headline Secure Earth Intelligence for Indonesia.',
     status: 'active',
     year: '2025',
     description:
-      'Earth Intelligence solution that transforms geospatial and remote sensing data into actionable insights.',
+      'Geospatial platform for land cover visualization and forest fire monitoring.',
     stack: [
       'React',
       'TypeScript',
@@ -198,12 +185,14 @@ export const projects = [
   {
     title: 'TSATSense',
     image: '/projects/tsatsense.jpeg',
+    imageWidth: 1200,
+    imageHeight: 720,
     imageAlt:
       'TSATSense IoT landing page with connected asset icons orbiting a satellite hub.',
     status: 'active',
     year: '2026',
     description:
-      'IoT and AI solutions that turn real-time sensor and video data into actionable insights.',
+      'IoT and AI systems that turn sensor and video feeds into alerts and predictions.',
     stack: [
       'React',
       'TypeScript',
@@ -220,12 +209,14 @@ export const projects = [
   {
     title: 'High Carbon Stock Analysis',
     image: '/projects/carbon.jpeg',
+    imageWidth: 1200,
+    imageHeight: 716,
     imageAlt:
       'Carbon monitoring report cover with satellite imagery of forested hills in Bogor Regency.',
-    status: 'done',
+    status: 'shipped',
     year: '2025',
     description:
-      'Analyzed and visualized high carbon stock areas using geospatial data and machine learning models to support sustainable land management and conservation efforts.',
+      'Mapped high carbon stock areas from satellite data to support land management and conservation planning.',
     stack: [
       'ArcGIS',
       'Python',
@@ -242,12 +233,14 @@ export const projects = [
   {
     title: 'Legalytics',
     image: '/projects/jdih.jpeg',
+    imageWidth: 1200,
+    imageHeight: 716,
     imageAlt:
       'JDIH Kemenkeu legal document portal with search, regulation listings, and legal analytics figures.',
     status: 'active',
     year: '2024',
     description:
-      'A legal analytics dashboard that improved data retrieval speeds by 40% through optimized database queries and advanced caching strategies, while automating the analysis of 500+ legal documents using GPT-3.5 Turbo and implementing a legal precedent retrieval system with sentence-transformers.',
+      'A legal analytics dashboard with faster search and automated analysis of legal documents.',
     stack: ['React', 'TypeScript', 'Elasticsearch', 'Docker', 'GPT-3.5 Turbo', 'Flask'],
     links: [
       { label: 'JDIH Kemenkeu', href: 'https://jdih.kemenkeu.go.id/home', icon: 'link' },
@@ -255,9 +248,7 @@ export const projects = [
   },
 ]
 
-/* ---- Navbar sections ----------------------------------------------------
-   `id` must match the id of the rendered section.
-   ------------------------------------------------------------------------ */
+/* Navbar sections. `id` must match the id of the rendered section. */
 export const navItems = [
   { id: 'about', label: 'About' },
   { id: 'projects', label: 'Projects' },

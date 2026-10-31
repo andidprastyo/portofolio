@@ -6,13 +6,6 @@ export default function Hero() {
   return (
     <section id="top" className="hero">
       <div className="container hero__inner">
-        <div className="hero__frame" aria-hidden="true">
-          <span />
-          <span />
-          <span />
-          <span />
-        </div>
-
         <div className="hero__main">
           <p className="hero__status">
             <span className="hero__dot" aria-hidden="true" />
@@ -82,9 +75,11 @@ export default function Hero() {
             <img
               className="hero__avatar"
               src={profile.avatar}
-              alt={profile.name}
+              alt={`${profile.name} portrait`}
               width="240"
               height="240"
+              fetchpriority="high"
+              decoding="async"
             />
           </div>
         )}

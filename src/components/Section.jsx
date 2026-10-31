@@ -1,18 +1,7 @@
 import { useReveal } from '../hooks/usePortfolio'
 
-/**
- * Standard page section: numbered monospace eyebrow, hairline rule, heading,
- * then content. The numbered index and rule are the strongest Blueprint cues.
- *
- * `variant` changes density/ground so five sections in a row don't read as
- * one continuous metronome:
- *   undefined  default padding on the app background
- *   "band"     full-bleed sunken background — a visual break mid-page
- *   "tight"    reduced vertical padding for denser content
- *   "roomy"    extra breathing room
- *
- * `actions` renders in the header row (e.g. the Projects view toggle).
- */
+/* Page section: numbered mono eyebrow, rule, heading, then content.
+   `variant`: band (sunken full-bleed), tight, or roomy. `actions` sits in the header. */
 export default function Section({
   id,
   index,

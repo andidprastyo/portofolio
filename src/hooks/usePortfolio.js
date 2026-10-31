@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 
 /**
- * Adds `is-visible` to an element once it scrolls into view, driving the
- * `.reveal` transition defined in base.css. Fires once, then unobserves.
+ * Adds `is-visible` once an element scrolls into view, driving the `.reveal`
+ * transition. Fires once, then unobserves.
  */
 export function useReveal() {
   const ref = useRef(null)
@@ -83,7 +83,7 @@ export function useScrolled(offset = 12) {
 
 /**
  * Page scroll progress from 0 to 1, throttled to one update per frame.
- * Drives the gradient hairline under the sticky navbar.
+ * Drives the hairline under the sticky navbar.
  */
 export function useScrollProgress() {
   const [progress, setProgress] = useState(0)
